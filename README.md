@@ -12,7 +12,7 @@ Main features
  - Stateless API endpoint made for containers 
  - Easily GraphQL API replicas against a single backend DB
 
- Read more in the [docs](https://github.com/MichaelJCompton/GraphSchemaTools/wiki) and explore the examples.
+ Read more in the [docs](https://github.com/MichaelJCompton/GraphSchemaTools/wiki) and explore the [examples](https://github.com/MichaelJCompton/GraphSchemaTools/tree/master/GraphSchema.Examples).
 
  See [these notes](https://github.com/MichaelJCompton/GraphSchemaTools/wiki/Roadmap-and-Issues) about current status and future directions.  
  
