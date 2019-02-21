@@ -14,5 +14,6 @@ Main features
 
  Read more in the [docs](https://github.com/MichaelJCompton/GraphSchemaTools/wiki) and explore the examples.
 
- See [these notes](https://github.com/MichaelJCompton/GraphSchemaTools/wiki/Roadmap-and-Issues) about current status, future directions and known issues.
+ See [these notes](https://github.com/MichaelJCompton/GraphSchemaTools/wiki/Roadmap-and-Issues) about current status and future directions.  
  
+ Please add issues, requests and suggestions [here](https://github.com/MichaelJCompton/GraphSchemaTools/issues.)
