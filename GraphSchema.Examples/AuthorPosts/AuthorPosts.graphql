@@ -1,0 +1,70 @@
+type Author {
+  id: ID!
+  name: String!
+  posts: [Post!]! 
+  level: Level!
+}
+
+type Post {
+  id: ID!
+  title: String
+  text: String
+  author: Author!
+}
+
+type Like {
+  likedPost: Post!
+  likedBy: Author!
+}
+
+enum Level {
+  NEWB
+  BEGINNER
+  ADVANCED
+  EXPERT
+}
+
+input AuthorInput {
+  name: String!
+  password: String!
+  level: Level!
+}
+
+input PostInput {
+  title: String
+  text: String
+  author: Author
+}
+
+input LikeInput {
+  likedPost: Post!
+  likedBy: Author!
+}
+
+directive @filter(filter: String!) on FIELD
+directive @paging(paging: String!) on FIELD
+directive @order(order: String!) on FIELD
+
+type Query {
+  GetAuthor(id: ID!, secret: String): Author
+  QueryAuthor(func: String): [Author!]!
+  
+  GetPost(id: ID!): Post
+  QueryPost(func: String): [Post!]!
+
+  MostLikedPost(authorId: String!): Post
+}
+
+type Mutation {
+  AddAuthor(inputData: AuthorInput!): Author
+  AddPost(inputData: PostInput!): Post
+}
+
+
+### GraphSchema
+# [GraphSchema] author INV posts
+# [GraphSchema] AuthorInput . password -> Secret
+# [GraphSchema/Dgraph] Author . name @index(hash)
+# [GraphSchema/Dgraph] Post . title @index(term)
+# [GraphSchema/Dgraph] Post . text @index(fulltext)
+
