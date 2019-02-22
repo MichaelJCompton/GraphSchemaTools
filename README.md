@@ -10,7 +10,7 @@ Main features
  - Graph database backend for a graph query langauge
  - Exposes all the Dgraph query power, plus GraphQL
  - Stateless API endpoint made for containers 
- - Easily GraphQL API replicas against a single backend DB
+ - Easily run GraphQL API replicas against a single backend DB
 
  Read more in the [docs](https://github.com/MichaelJCompton/GraphSchemaTools/wiki) and explore the [examples](https://github.com/MichaelJCompton/GraphSchemaTools/tree/master/GraphSchema.Examples).
 
