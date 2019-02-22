@@ -52,12 +52,13 @@ type Query {
   GetPost(id: ID!): Post
   QueryPost(func: String): [Post!]!
 
-  MostLikedPost(authorId: String!): Post
+  MostLikedPost(query: String!): Post
 }
 
 type Mutation {
   AddAuthor(inputData: AuthorInput!): Author
   AddPost(inputData: PostInput!): Post
+  AddLike(inputData: LikeInput!): Like
 }
 
 
@@ -67,4 +68,5 @@ type Mutation {
 # [GraphSchema/Dgraph] Author . name @index(hash)
 # [GraphSchema/Dgraph] Post . title @index(term)
 # [GraphSchema/Dgraph] Post . text @index(fulltext)
+# [GraphSchema/Dgraph] MostLikedPost -> GraphSchema.Translation.MostLikedPost
 

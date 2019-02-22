@@ -1,0 +1,13 @@
+posts as var(func: anyofterms(title, $query)) {
+  uid
+}
+  
+var(func: has(likedPost)) {
+  initScore as math(1)
+  likedPost @filter(uid(posts)) {
+    postScore as math(initScore)
+  }
+}
+  
+mostLikedPost as var(func: uid(postScore), orderdesc: val(postScore), first: 1) 
+  
