@@ -1,6 +1,6 @@
 # GraphSchema GraphQL tools
 
-GraphSchema is a tool that can run a GraphQL API from just the declarative GraphQL schema using a Dgraph backend graph database.
+GraphSchema is a tool that can run a GraphQL API from just the declarative GraphQL schema.  It serves the GraphQL API over http and uses Dgraph as a backend graph database.
 
 GraphSchema is currently released as an early alpha in a container image in the docker hub at mjcomp/graphschema.
 
