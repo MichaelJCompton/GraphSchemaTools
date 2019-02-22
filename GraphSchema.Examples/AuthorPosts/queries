@@ -1,0 +1,107 @@
+##############################
+# Get an author
+##############################
+
+# Query body
+
+query getAuthor($inp: ID!) {
+  getAuthor(id: $inp) {
+    id,
+    name,
+    posts { title }
+  }
+}
+
+# Query variables
+
+{
+	"inp": "0x2"
+}
+
+
+##############################
+# Get all authors
+##############################
+
+# Query body
+
+query queryAuthor {
+  queryAuthor {
+    id,
+    name
+  }
+}
+
+
+##############################
+# Check password
+##############################
+
+# check if a password matches and
+# return the Author's data.  If
+# the password check fails, null
+# is returned
+
+# Query body
+
+query checkAuthor($inp: ID!, $password: String) {
+  getAuthor(id: $inp, secret: $password) {
+    id,
+    name
+  }
+}
+
+# Query variables (to succeed)
+
+{
+	"inp": "0x2",
+	"password": "aPaSSwoRd"
+}
+
+# Query variables (to fail)
+
+{
+	"inp": "0x2",
+	"password": "Wr0nG"
+}
+
+
+##############################
+# Search for posts
+##############################
+
+# All posts with title
+# containing word `GraphQL`
+
+# Query body
+
+query queryPost($inp: String!) {
+  queryPost(func: $inp) {
+    id,
+    title,
+    text,
+    author { name }
+  }
+}
+
+# Query variables
+
+{
+	"inp": "anyofterms(title, \"GraphQL\")"
+}
+
+##############################
+# Most liked post
+##############################
+
+# A query translation allows you
+# have pretty much any query, not
+# just the conventions.
+#
+# This query gets the most liked
+# post for an author.
+
+# Query body
+
+
+# Query variables

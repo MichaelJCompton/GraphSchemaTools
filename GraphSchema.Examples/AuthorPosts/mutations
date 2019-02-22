@@ -1,0 +1,58 @@
+##############################
+# Add a new Author
+##############################
+
+# Query body
+
+mutation addAuthor($input: AuthorInput!) {
+  addAuthor(inputData: $input) {
+    id,
+    name
+  }
+}
+
+
+# Query variables
+
+{
+	"input": {
+		"name": "A. Author",
+		"password": "aPaSSwoRd"
+	}
+}
+
+
+##############################
+# Add a new Post
+##############################
+
+# Query body
+
+mutation addPost($input: PostInput!) {
+  addPost(inputData: $input) {
+    id,
+    title,
+    text,
+    author { name }
+  }
+}
+
+# Query variables
+
+{
+	"input": {
+		"title": "GraphQL in Dgraph",
+		"text": "Conventions based API from declarative schema",
+		"author": {
+			"uid": "0x2"
+		}
+	}
+}
+
+##############################
+# Like a post
+##############################
+
+# Query body
+
+# Query variables
