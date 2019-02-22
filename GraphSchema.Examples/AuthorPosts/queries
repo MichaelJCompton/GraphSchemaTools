@@ -99,9 +99,19 @@ query queryPost($inp: String!) {
 # just the conventions.
 #
 # This query gets the most liked
-# post for an author.
+# post with a given term in the title
 
 # Query body
 
+query mostliked($query: String!) {
+  mostLikedPost(query: $query) {
+    title
+    text
+  }
+}
 
 # Query variables
+
+{
+	"query": "GraphQL"
+}
